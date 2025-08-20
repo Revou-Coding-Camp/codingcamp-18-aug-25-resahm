@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+/* Container */
+.todo-container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  width: 550px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-container h2 {
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+/* Input */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="date"] {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #74b9ff;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #0984e3;
+}
+
+.add-btn {
+  background: #00b894;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #019875;
+}
+
+/* Buttons */
+.action-buttons {
+  margin-bottom: 15px;
+}
+
+.filter-btn, .delete-all-btn {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.filter-btn { background: #0984e3; }
+.filter-btn:hover { background: #0652DD; }
+
+.delete-all-btn { background: #d63031; }
+.delete-all-btn:hover { background: #b71540; }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background: #6c5ce7;
+  color: white;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.no-task {
+  color: #999;
+  font-style: italic;
+}
+
+/* Status badge */
+.status-pending {
+  color: #e17055;
+  font-weight: bold;
+}
+
+.status-done {
+  color: #00b894;
+  font-weight: bold;
+}
+
+/* Action buttons */
+.action-btn {
+  margin: 0 3px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.complete-btn { background: #55efc4; }
+.complete-btn:hover { background: #00b894; }
+
+.delete-btn { background: #ff7675; }
+.delete-btn:hover { background: #d63031; }
