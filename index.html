@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <!-- CSS External -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
 
-  <div class="todo-container">
-    <h2>Todo List</h2>
-    <div class="input-group">
-      <input type="text" id="taskInput" placeholder="Add a todo...">
-      <input type="date" id="dateInput">
-      <button class="add-btn" onclick="addTask()">+</button>
-    </div>
-    <div class="action-buttons">
-      <button class="filter-btn" onclick="filterTasks()">Filter</button>
-      <button class="delete-all-btn" onclick="deleteAll()">Delete All</button>
-    </div>
+<body class="min-h-screen flex flex-col items-center justify-between p-6 bg-gray-50">
 
-    <table>
-      <thead>
-        <tr>
-          <th>Task</th>
-          <th>Due Date</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="taskList">
-        <tr><td colspan="4" class="no-task">No task found</td></tr>
-      </tbody>
-    </table>
-  </div>
+    <!-- Hero Website -->
+    <header class="mb-6 text-center">
+        <h1 class="text-4xl font-bold text-blue-700">Todo List</h1>
+        <p class="text-gray-600">Manage your tasks efficiently</p>
+    </header>
 
-  <script src="script.js"></script>
+    <!-- Main Content, Todo List Form, List Todo -->
+    <main class="w-full max-w-xl bg-white shadow-md rounded-2xl p-6">
+        <!-- Form -->
+        <form class="flex gap-2 mb-4">
+            <input type="text" id="task-input" placeholder="Add a new task"
+                class="flex-1 border p-2 rounded focus:ring-2 focus:ring-blue-500 outline-none">
+            <input type="date" id="due-date-input"
+                class="border p-2 rounded focus:ring-2 focus:ring-blue-500 outline-none">
+            <button type="button" onclick="validateForm();"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 rounded">Add</button>
+        </form>
+
+        <!-- Action button section -->
+        <section class="flex gap-2 mb-4">
+            <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Filter</button>
+            <button onclick="deleteAll()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Delete All</button>
+        </section>
+
+        <!-- List of Task -->
+        <section>
+            <header>
+                <h2 class="text-2xl font-semibold text-gray-800">Tasks</h2>
+            </header>
+
+            <ul class="my-4 divide-y divide-gray-200" id="task-list">
+                <li class="py-2">Task 1</li>
+                <li class="py-2">Task 2</li>
+                <li class="py-2">Task 3</li>
+                <li class="py-2">Task 4</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="mt-6 text-sm text-white-500">
+        <span>&copy; 2025 Todo List App. All rights reserved.</span>
+    </footer>
+
+    <!-- JS External -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>
